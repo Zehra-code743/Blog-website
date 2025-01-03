@@ -1,6 +1,7 @@
 "use client"; // This line marks the file as a Client Component
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import the Image component
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -117,8 +118,11 @@ export default function Contact() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <img
+          <Image
             src="/Contact.png"
+            alt="Contact Image"
+            width={1200}
+            height={800}
             className="w-full sm:w-3/4 lg:w-full xl:w-full object-contain block mx-auto"
           />
         </motion.div>

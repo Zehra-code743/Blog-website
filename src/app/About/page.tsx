@@ -1,6 +1,7 @@
 "use client"; // This line marks the file as a Client Component
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import the Image component
 
 export default function About() {
   // Team data
@@ -50,10 +51,12 @@ export default function About() {
               whileTap={{ scale: 0.95 }}
             >
               <div className="lg:min-h-[250px] w-full flex justify-center">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="rounded-full border-4 border-white shadow-xl w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-56 xl:h-56"
+                  width={200} // Adjust width as necessary
+                  height={200} // Adjust height as necessary
+                  className="rounded-full border-4 border-white shadow-xl"
                 />
               </div>
 
