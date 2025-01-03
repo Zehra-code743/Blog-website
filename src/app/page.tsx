@@ -1,101 +1,80 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="font-sans">
+      <div className="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 p-8">
+        <div className="max-lg:order-1 max-lg:text-center sm:p-12 p-4">
+          <h2 className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px] drop-shadow-lg">
+            "The Future of Cybersecurity: Emerging Threats and Innovative Solutions"
+          </h2>
+          <p className="text-white mt-6 text-base leading-relaxed opacity-90">
+            In an increasingly digital world, cybersecurity has become a cornerstone of modern society, protecting sensitive data, critical infrastructure, and personal information from malicious attacks.
+          </p>
+          <button
+            type="button"
+            className="mt-12 text-white font-bold text-sm rounded-md px-6 py-2.5 bg-blue-700 hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Get Started
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <div className="lg:h-[480px] flex items-center">
+          <img
+            src="/Cybersecurity2.png"
+            className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
+            alt="Cybersecurity"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-4 my-12">
+        {/* Reusable Card Component */}
+        {[
+          {
+            title: "Customization",
+            description:
+              "Customized cybersecurity refers to designing and implementing security strategies that address the unique requirements of an organization, industry, or individual.",
+            icon: "<your_svg_here>",
+          },
+          {
+            title: "Support",
+            description:
+              "Support in cybersecurity refers to the resources, services, and assistance provided to organizations or individuals to maintain and troubleshoot their cybersecurity frameworks.",
+            icon: "<your_svg_here>",
+          },
+          {
+            title: "Performance",
+            description:
+              "Performance in cybersecurity typically refers to the effectiveness and efficiency with which an organization's security measures operate to protect digital assets.",
+            icon: "<your_svg_here>",
+          },
+          {
+            title: "Security",
+            description:
+              "Security in cybersecurity refers to the measures, practices, and technologies implemented to protect digital assets, systems, networks, and data from unauthorized access.",
+            icon: "<your_svg_here>",
+          },
+        ].map((card, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              className="w-12 h-12 mb-4 bg-blue-100 text-blue-500 p-2 rounded-md flex items-center justify-center"
+              dangerouslySetInnerHTML={{ __html: card.icon }}
+            />
+            <h3 className="text-lg font-bold mb-2 text-gray-800">
+              {card.title}
+            </h3>
+            <p className="text-sm text-gray-600">{card.description}</p>
+            <a
+              href="#"
+              className="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline"
+            >
+              Learn more
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
