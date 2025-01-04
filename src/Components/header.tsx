@@ -21,7 +21,7 @@ export default function Header() {
             alt="Logo"
             width={128}
             height={40}
-            className="hidden sm:block"
+            className="hidden sm:block md:w-32"
             priority
           />
         </Link>
@@ -39,8 +39,8 @@ export default function Header() {
         </Link>
 
         {/* Navigation menu */}
-        <nav className="hidden lg:flex ml-14 gap-x-5">
-          <ul className="flex gap-x-5">
+        <nav className="hidden md:flex ml-4 md:ml-10 lg:ml-14 gap-x-4 md:gap-x-6 lg:gap-x-8">
+          <ul className="flex gap-x-4 md:gap-x-6 lg:gap-x-8">
             <li>
               <Link href="/" className="text-[#aa2c41] text-sm hover:text-blue-600">
                 Home
@@ -75,18 +75,18 @@ export default function Header() {
         </nav>
 
         {/* Hamburger menu for smaller screens */}
-        <button onClick={toggleSearchBar} className="lg:hidden ml-auto">
-          <div className="w-7 h-7">
-            <div className="h-[2px] bg-black mb-2"></div>
-            <div className="h-[2px] bg-black mb-2"></div>
-            <div className="h-[2px] bg-black"></div>
+        <button onClick={toggleSearchBar} className="md:hidden ml-auto">
+          <div className="w-6 h-6 flex flex-col justify-between">
+            <span className="h-[2px] bg-black"></span>
+            <span className="h-[2px] bg-black"></span>
+            <span className="h-[2px] bg-black"></span>
           </div>
         </button>
 
         {/* Search bar */}
         <div
           id="search-bar"
-          className="absolute top-0 left-0 w-full bg-white shadow-lg p-4 sm:hidden hidden"
+          className="absolute top-[65px] left-0 w-full bg-white shadow-lg p-4 sm:hidden hidden"
         >
           <div className="flex w-full bg-gray-100 px-4 py-2 rounded border">
             <input
