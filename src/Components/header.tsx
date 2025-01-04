@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Header1() {
+export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Toggle search bar visibility for mobile
