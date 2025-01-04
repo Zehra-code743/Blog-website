@@ -9,7 +9,7 @@ export default function RegisterForm() {
   const [acceptTerms, setAcceptTerms] = useState(false);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-red-400 p-6">
       <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 flex">
         {/* Left Column - Image */}
         <div className="hidden lg:block w-1/2 p-4">
