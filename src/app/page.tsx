@@ -24,7 +24,7 @@ export default function Home() {
         {/* Image Content */}
         <div className="lg:h-[480px] flex items-center">
           <Image
-            src="/Cybersecurity2.png"
+            src="/cybersecurity2.png"
             className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
             alt="Cybersecurity"
             width={480}

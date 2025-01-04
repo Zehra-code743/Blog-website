@@ -39,7 +39,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation menu */}
-        <nav className="hidden md:flex ml-4 md:ml-10 lg:ml-14 gap-x-4 md:gap-x-6 lg:gap-x-8">
+        <header className="hidden md:flex ml-4 md:ml-10 lg:ml-14 gap-x-4 md:gap-x-6 lg:gap-x-8">
           <ul className="flex gap-x-4 md:gap-x-6 lg:gap-x-8">
             <li>
               <Link href="/" className="text-[#aa2c41] text-sm hover:text-blue-600">
@@ -72,7 +72,7 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-        </nav>
+        </header>
 
         {/* Hamburger menu for smaller screens */}
         <button onClick={toggleSearchBar} className="md:hidden ml-auto">
