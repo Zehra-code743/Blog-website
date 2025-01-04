@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Header() {
+export default function Header1() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Toggle search bar visibility for mobile
@@ -82,18 +82,11 @@ export default function Header() {
           {/* Hamburger Menu for smaller screens */}
           <div className="lg:hidden flex ml-auto">
             <button id="toggleOpen" className="lg:hidden">
-              <svg
-                className="w-7 h-7"
-                fill="#000"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
+              <div className="w-7 h-7">
+                <div className="h-[2px] bg-black mb-2"></div>
+                <div className="h-[2px] bg-black mb-2"></div>
+                <div className="h-[2px] bg-black"></div>
+              </div>
             </button>
           </div>
 
@@ -118,18 +111,11 @@ export default function Header() {
           {/* Mobile Search Toggle */}
           <div className="sm:hidden flex ml-auto">
             <button onClick={toggleSearchBar} className="lg:hidden">
-              <svg
-                className="w-7 h-7"
-                fill="#000"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <div className="w-7 h-7">
+                <div className="h-[2px] bg-black mb-2"></div>
+                <div className="h-[2px] bg-black mb-2"></div>
+                <div className="h-[2px] bg-black"></div>
+              </div>
             </button>
           </div>
         </div>

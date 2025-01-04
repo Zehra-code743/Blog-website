@@ -92,10 +92,10 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
   };
 
   return (
-    <div className="blog-container px-4 py-8 bg-gray-100 min-h-screen">
+    <div className="blog-container px-4 py-8 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen">
       {selectedBlog ? (
         <motion.div
-          className="blog-content max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg"
+          className="blog-content max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-2xl"
           initial={{ opacity: 0, y: 50 }} // Initial state (invisible, below screen)
           animate={{ opacity: 1, y: 0 }}  // Animated to visible state
           transition={{ duration: 0.8 }}  // Transition duration
@@ -111,12 +111,12 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
               alt={selectedBlog.title}
               width={800}
               height={400}
-              className="rounded-xl shadow-xl mx-auto"
+              className="rounded-xl shadow-xl mx-auto transition-transform duration-300 hover:scale-105"
             />
           </motion.div>
 
           <motion.h2
-            className="text-3xl font-bold text-gray-800 mb-4"
+            className="text-4xl font-extrabold text-gray-800 mb-4 transition-transform duration-300 hover:translate-x-2"
             initial={{ opacity: 0 }}    // Initial opacity for title
             animate={{ opacity: 1 }}    // Animate to full opacity
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -125,7 +125,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
           </motion.h2>
 
           <motion.p
-            className="text-gray-600 mb-6 text-lg"
+            className="text-gray-600 mb-6 text-lg italic"
             initial={{ opacity: 0 }}    // Initial opacity for description
             animate={{ opacity: 1 }}    // Animate to full opacity
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -143,34 +143,34 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
           </motion.div>
 
           {/* Comment Section */}
-          <div className="comments-section mt-8">
-            <h3 className="text-xl font-semibold mb-4">Leave a Comment</h3>
+          <div className="comments-section mt-8 bg-gradient-to-r from-teal-50 to-lime-50 p-6 rounded-lg shadow-xl">
+            <h3 className="text-xl font-semibold mb-4 text-gray-700">Leave a Comment</h3>
 
             {/* Comment Form */}
             <div className="comment-form mb-6">
               <input
                 type="text"
-                className="w-full p-4 mb-4 border rounded-lg"
+                className="w-full p-4 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Your Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)} // Update name
               />
               <textarea
-                className="w-full p-4 mb-4 border rounded-lg"
+                className="w-full p-4 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 placeholder="Your Comment"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)} // Update comment
               />
               <button
                 onClick={handleCommentSubmit}
-                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
               >
                 Submit Comment
               </button>
             </div>
 
             {/* Display Comments Heading */}
-            <h4 className="text-lg font-semibold mt-6 mb-4">Comments</h4>
+            <h4 className="text-lg font-semibold mt-6 mb-4 text-gray-700">Comments</h4>
 
             {/* Display Submitted Comments */}
             <div className="existing-comments">
@@ -178,7 +178,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
                 comments.map((commentData, index) => (
                   <div
                     key={index}
-                    className="comment p-4 mb-4 bg-gray-200 rounded-lg shadow-sm flex items-start"
+                    className="comment p-4 mb-4 bg-gray-200 rounded-lg shadow-sm flex items-start transition-all hover:bg-gray-300"
                   >
                     {/* User Icon */}
                     <div className="mr-4">
