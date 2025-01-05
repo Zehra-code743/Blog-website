@@ -1,8 +1,10 @@
+import Header from "@/components/header";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="font-sans">
+      <Header/>
       {/* Hero Section */}
       <div className="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 p-8">
         {/* Text Content */}
