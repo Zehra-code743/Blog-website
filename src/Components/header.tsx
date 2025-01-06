@@ -1,7 +1,13 @@
+"use client"
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <header className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-700 text-white shadow-lg">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -17,29 +23,52 @@ export default function Header() {
           />
         </div>
 
+        {/* Hamburger Icon for Mobile */}
+        <div className="block lg:hidden">
+          <button 
+            onClick={toggleMenu} 
+            className="text-white focus:outline-none"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              strokeWidth={2} 
+              stroke="currentColor" 
+              className="w-8 h-8"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
+            </svg>
+          </button>
+        </div>
+
         {/* Navigation Links */}
-        <nav>
-          <ul className="flex space-x-8 text-lg">
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/">Home</Link>
+        
+          <ul className="flex flex-col lg:flex-row space-y-4 lg:space-x-8 lg:space-y-0 text-lg">
+            <li>
+              <Link href="/" className="hover:text-yellow-300 transition duration-300">Home</Link>
             </li>
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/aboutus">About Us</Link>
+            <li>
+              <Link href="/aboutus" className="hover:text-yellow-300 transition duration-300">About</Link>
             </li>
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/feature">Feature</Link>
+            <li>
+              <Link href="/feature" className="hover:text-yellow-300 transition duration-300">Feature</Link>
             </li>
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/blog">Blog</Link>
+             <li>
+              <Link href="/blog" className="hover:text-yellow-300 transition duration-300">Blog</Link>
             </li>
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/registerform">Register Form</Link>
+            <li>
+              <Link href="/registerform" className="hover:text-yellow-300 transition duration-300">RegisterForm</Link>
             </li>
-            <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/contact">Contact</Link>
+            <li>
+              <Link href="/contact" className="hover:text-yellow-300 transition duration-300">Contact</Link>
             </li>
           </ul>
-        </nav>
+        
 
         {/* Search Bar with Icon */}
         <div className="search-bar flex items-center bg-white rounded-lg shadow-sm border border-gray-300 px-4 py-2">
