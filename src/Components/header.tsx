@@ -5,10 +5,11 @@ export default function Header() {
   return (
     <header className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-700 text-white shadow-lg">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        
         {/* Logo Section */}
         <div className="logo">
           <Image 
-            src="/logo.png" 
+            src="/Cyberlogo.png" 
             alt="Logo" 
             width={100} 
             height={100} 
@@ -17,7 +18,7 @@ export default function Header() {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-1">
+        <nav>
           <ul className="flex space-x-8 text-lg">
             <li className="hover:text-yellow-300 transition duration-300">
               <Link href="/">Home</Link>
@@ -32,12 +33,11 @@ export default function Header() {
               <Link href="/blog">Blog</Link>
             </li>
             <li className="hover:text-yellow-300 transition duration-300">
-              <Link href="/registerform">RegisterForm</Link>
+              <Link href="/registerform">Register Form</Link>
             </li>
             <li className="hover:text-yellow-300 transition duration-300">
               <Link href="/contact">Contact</Link>
             </li>
-            
           </ul>
         </nav>
 
