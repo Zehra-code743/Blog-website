@@ -1,5 +1,7 @@
 "use client"; // This line marks the file as a Client Component
 import { useState } from "react";
+import Image from "next/image"; // Import Next.js Image component
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 
 export default function RegisterForm() {
   // React state for individual form fields
@@ -9,19 +11,42 @@ export default function RegisterForm() {
   const [acceptTerms, setAcceptTerms] = useState(false);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-red-400 p-6">
-      <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 flex">
+    <motion.div
+      className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-red-400 p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className="w-full max-w-4xl bg-white rounded-lg shadow-lg flex flex-col lg:flex-row"
+        initial={{ y: 50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         {/* Left Column - Image */}
-        <div className="hidden lg:block w-1/2 p-4">
-          <img
-            src="/cybersoftwere.png" // Replace with your image URL
+        <motion.div
+          className="w-full lg:w-1/2 p-4 flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Image
+            src="/cybersoftwere.png" // Replace with the correct image path
             alt="Register"
-            className="w-full h-full object-cover rounded-lg"
+            className="rounded-lg"
+            width={500} // Adjust dimensions as needed
+            height={500} // Adjust dimensions as needed
+            priority // Ensures the image is preloaded
           />
-        </div>
+        </motion.div>
 
         {/* Right Column - Form */}
-        <div className="w-full lg:w-1/2 p-6">
+        <motion.div
+          className="w-full lg:w-1/2 p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           <h2 className="text-3xl font-bold text-gray-800 text-center">Create an Account</h2>
           <p className="text-sm text-gray-600 text-center mt-2">
             Join us today! Fill in the details below to get started.
@@ -29,11 +54,15 @@ export default function RegisterForm() {
 
           <form
             action="/your-form-endpoint" // Replace with your form submission endpoint
-            method="POST" 
+            method="POST"
             className="mt-6 space-y-6"
           >
             {/* Full Name */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
               <label className="block text-sm font-medium text-gray-700">Full Name</label>
               <input
                 name="name"
@@ -44,10 +73,14 @@ export default function RegisterForm() {
                 className="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Enter your full name"
               />
-            </div>
+            </motion.div>
 
             {/* Email */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            >
               <label className="block text-sm font-medium text-gray-700">Email</label>
               <input
                 name="email"
@@ -58,10 +91,14 @@ export default function RegisterForm() {
                 className="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Enter your email"
               />
-            </div>
+            </motion.div>
 
             {/* Password */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
               <label className="block text-sm font-medium text-gray-700">Password</label>
               <input
                 name="password"
@@ -72,10 +109,15 @@ export default function RegisterForm() {
                 className="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Enter your password"
               />
-            </div>
+            </motion.div>
 
             {/* Accept Terms */}
-            <div className="flex items-center">
+            <motion.div
+              className="flex items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
               <input
                 id="accept-terms"
                 name="acceptTerms"
@@ -90,26 +132,34 @@ export default function RegisterForm() {
                   Terms and Conditions
                 </a>
               </label>
-            </div>
+            </motion.div>
 
             {/* Submit Button */}
-            <button
+            <motion.button
               type="submit"
               className="w-full py-3 px-4 text-white font-semibold bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
             >
               Register
-            </button>
+            </motion.button>
           </form>
 
           {/* Footer */}
-          <p className="text-sm text-center text-gray-600 mt-6">
+          <motion.p
+            className="text-sm text-center text-gray-600 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
             Already have an account?{" "}
             <a href="#" className="text-indigo-600 underline">
               Login here
             </a>
-          </p>
-        </div>
-      </div>
-    </div>
+          </motion.p>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

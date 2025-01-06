@@ -1,103 +1,100 @@
+"use client";
+
+import React from "react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaShieldAlt } from "react-icons/fa";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 pt-12 pb-6 px-6 sm:px-10 font-sans tracking-wide relative">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Quick Links */}
-          <div>
-            <h2 className="text-white text-sm uppercase font-semibold mb-4">Quick Links</h2>
-            <ul className="space-y-3">
-              <li>
-                <a href="/cybersecurity" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Cybersecurity
-                </a>
-              </li>
-              <li>
-                <a href="/hackers" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Hackers
-                </a>
-              </li>
-              <li>
-                <a href="/careers" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Careers
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Follow Us */}
-          <div>
-            <h2 className="text-white text-sm uppercase font-semibold mb-4">Follow Us</h2>
-            <ul className="space-y-3">
-              <li>
-                <a href="https://github.com" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Github
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" className="text-gray-400 hover:text-white text-sm transition-all">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Twitter
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h2 className="text-white text-sm uppercase font-semibold mb-4">Company</h2>
-            <ul className="space-y-3">
-              <li>
-                <a href="/about" className="text-gray-400 hover:text-white text-sm transition-all">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms-conditions" className="text-gray-400 hover:text-white text-sm transition-all">
-                  Terms &amp; Conditions
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Logo */}
-          <div className="flex items-center lg:justify-center sm:justify-start max-sm:-order-1">
-            <a href="/">
-              <img src="/Cyberlogo.png" alt="logo" className="w-32 sm:w-40 lg:w-56" />
-            </a>
-          </div>
-        </div>
-
-        <hr className="mt-12 mb-6 border-gray-600" />
-
-        {/* Social Links and Footer Text */}
-        <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start gap-6">
-          <div className="flex space-x-5">
-            <a href="https://www.facebook.com" className="text-gray-400 hover:text-white text-sm transition-all">
-              Facebook
-            </a>
-            <a href="https://www.youtube.com" className="text-gray-400 hover:text-white text-sm transition-all">
-              YouTube
-            </a>
-            <a href="https://www.instagram.com" className="text-gray-400 hover:text-white text-sm transition-all">
-              Instagram
-            </a>
-          </div>
-
-          <p className="text-gray-400 text-sm text-center sm:text-left">
-            © CyberSecurity. All rights reserved.
+    <motion.footer
+      className="footer-parent bg-gray-900 text-gray-300 py-10 px-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Left Section */}
+        <motion.div
+          className="about-section"
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-xl font-semibold text-white mb-4 flex items-center">
+            <FaShieldAlt className="mr-2 text-blue-500" /> CyberSecurity 
+          </h2>
+          <p className="text-gray-400 leading-relaxed">
+            We provide cutting-edge cybersecurity solutions to protect your
+            digital assets. With advanced tools and expertise, your safety is our
+            priority.
           </p>
-        </div>
+        </motion.div>
+
+        {/* Middle Section */}
+        <motion.div
+          className="social-links"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+          <ul className="space-y-3">
+            <li className="flex items-center space-x-3">
+              <FaFacebook className="text-blue-500" />
+              <Link
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Facebook
+              </Link>
+            </li>
+            <li className="flex items-center space-x-3">
+              <FaTwitter className="text-blue-400" />
+              <Link
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Twitter
+              </Link>
+            </li>
+            <li className="flex items-center space-x-3">
+              <FaLinkedin className="text-blue-700" />
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                LinkedIn
+              </Link>
+            </li>
+          </ul>
+        </motion.div>
+
+        {/* Right Section */}
+        <motion.div
+          className="contact-us"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+          <p className="text-gray-400">
+            For inquiries or support, reach us at:
+          </p>
+          <p className="text-blue-500 mt-2">support@cybersec.com</p>
+        </motion.div>
       </div>
-    </footer>
+
+      {/* Footer Bottom */}
+      <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">
+        <p>&copy; 2025 CyberSec . All rights reserved.</p>
+      </div>
+    </motion.footer>
   );
 }

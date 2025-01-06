@@ -15,28 +15,46 @@ export default function Contact() {
 
   return (
     <motion.div
-      className="bg-green-50 font-[sans-serif] lg:h-screen"
+      className="bg-gradient-to-r from-green-200 to-blue-100 font-sans min-h-screen flex items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="grid lg:grid-cols-3 items-center max-lg:justify-center gap-6 h-full sm:p-12 p-8 max-sm:p-4">
+      <div className="grid lg:grid-cols-2 items-center w-full max-w-6xl mx-auto p-6 lg:p-12 shadow-lg rounded-lg bg-white">
+        {/* Left Column - Image */}
         <motion.div
-          className="max-w-lg mx-auto text-center mb-6 lg:col-span-1"
+          className="w-full"
           initial={{ x: -100 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800">
-            Get In Touch
+          <Image
+            src="/contact.png"
+            alt="contact Image"
+            width={500}
+            height={500}
+            className="rounded-lg object-cover w-full h-full"
+            priority
+          />
+        </motion.div>
+
+        {/* Right Column - Form */}
+        <motion.div
+          className="w-full space-y-6"
+          initial={{ x: 100 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center">
+            Get in Touch
           </h2>
-          <p className="text-sm text-gray-600 mt-4 leading-relaxed">
-            Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage with you.
+          <p className="text-sm text-gray-600 text-center">
+            We’re excited to hear from you! Fill out the form, and we’ll get back to you as soon as possible.
           </p>
 
           {submitted && (
             <motion.p
-              className="text-green-600 mt-4 font-semibold"
+              className="text-green-600 text-center font-semibold"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -51,30 +69,30 @@ export default function Contact() {
               setSubmitted(true);
               setTimeout(() => setSubmitted(false), 3000);
             }}
-            className="mx-auto mt-4 bg-white rounded-lg p-6 shadow-md space-y-4"
+            className="space-y-4"
           >
             <motion.input
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm outline-none"
-              whileFocus={{ scale: 1.05 }}
+              className="w-full rounded-md px-4 py-3 bg-gray-100 text-sm text-gray-700 shadow-sm outline-none focus:ring-2 focus:ring-green-400 transition"
+              whileFocus={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
             />
             <motion.input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm outline-none"
-              whileFocus={{ scale: 1.05 }}
+              className="w-full rounded-md px-4 py-3 bg-gray-100 text-sm text-gray-700 shadow-sm outline-none focus:ring-2 focus:ring-green-400 transition"
+              whileFocus={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
             />
             <motion.input
@@ -85,46 +103,31 @@ export default function Contact() {
               onChange={(e) =>
                 setFormData({ ...formData, subject: e.target.value })
               }
-              className="w-full rounded-md h-12 px-6 bg-[#f0f1f2] text-sm outline-none"
-              whileFocus={{ scale: 1.05 }}
+              className="w-full rounded-md px-4 py-3 bg-gray-100 text-sm text-gray-700 shadow-sm outline-none focus:ring-2 focus:ring-green-400 transition"
+              whileFocus={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
             />
             <motion.textarea
               name="message"
-              placeholder="Message"
-              rows={6}
+              placeholder="Your Message"
+              rows={4}
               value={formData.message}
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              className="w-full rounded-md px-6 bg-[#f0f1f2] text-sm pt-3 outline-none"
-              whileFocus={{ scale: 1.05 }}
+              className="w-full rounded-md px-4 py-3 bg-gray-100 text-sm text-gray-700 shadow-sm outline-none focus:ring-2 focus:ring-green-400 transition"
+              whileFocus={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
             ></motion.textarea>
             <motion.button
               type="submit"
-              className="text-gray-800 bg-green-200 hover:bg-green-300 font-semibold rounded-md text-sm px-6 py-3 block w-full mt-4"
+              className="bg-green-500 text-white font-semibold rounded-md px-6 py-3 w-full shadow-md hover:bg-green-600 focus:ring-2 focus:ring-green-400 transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Send Message
             </motion.button>
           </form>
-        </motion.div>
-
-        <motion.div
-          className="z-10 relative lg:col-span-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Image
-            src="/Contact.png"
-            alt="Contact Image"
-            width={1200}
-            height={800}
-            className="w-full sm:w-3/4 lg:w-full xl:w-full object-contain block mx-auto"
-          />
         </motion.div>
       </div>
     </motion.div>

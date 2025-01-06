@@ -1,14 +1,12 @@
-
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="font-sans">
-      
       {/* Hero Section */}
       <div className="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 p-8">
         {/* Text Content */}
-        <div className="max-lg:order-1 max-lg:text-center sm:p-12 p-4">
+        <div className="max-lg:order-1 max-lg:text-center sm:p-12 p-4 animate-fade-in">
           <h2 className="text-white lg:text-5xl text-3xl font-bold lg:!leading-[56px] drop-shadow-lg">
             "The Future of Cybersecurity: Emerging Threats and Innovative Solutions"
           </h2>
@@ -24,7 +22,7 @@ export default function Home() {
         </div>
 
         {/* Image Content */}
-        <div className="lg:h-[480px] flex items-center">
+        <div className="lg:h-[480px] flex items-center animate-fade-in">
           <Image
             src="/cybersecurity2.png"
             className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform"
@@ -65,7 +63,7 @@ export default function Home() {
         ].map((card, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-shadow"
+            className="bg-white p-6 rounded-md shadow-md hover:shadow-lg transition-shadow transform hover:translate-y-[-5px] duration-300"
           >
             <div className="w-12 h-12 mb-4 bg-blue-100 text-blue-500 p-2 rounded-md flex items-center justify-center text-2xl">
               {card.icon}
