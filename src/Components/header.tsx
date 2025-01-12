@@ -8,7 +8,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-gray-900 shadow-lg">
+    <div className="flex flex-wrap justify-between items-center p-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-black shadow-lg">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image 
@@ -64,7 +64,7 @@ export default function Header() {
         </li>
         <li>
           <Link
-            href="/contact"
+            href="/Contact"
             className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
           >
             Contact
