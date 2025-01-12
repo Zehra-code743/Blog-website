@@ -8,7 +8,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg">
+    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-gray-900 shadow-lg">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image 
@@ -25,7 +25,7 @@ export default function Header() {
         <li>
           <Link
             href="/"
-            className="text-red-500 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
           >
             Home
           </Link>
@@ -33,7 +33,7 @@ export default function Header() {
         <li>
           <Link
             href="/aboutus"
-            className="text-yellow-400 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
           >
             About
           </Link>
@@ -41,7 +41,7 @@ export default function Header() {
         <li>
           <Link
             href="/Feature"
-            className="text-green-400 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
           >
             Feature
           </Link>
@@ -49,7 +49,7 @@ export default function Header() {
         <li>
           <Link
             href="/blog"
-            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
           >
             Blog
           </Link>
@@ -57,7 +57,7 @@ export default function Header() {
         <li>
           <Link
             href="/RegisterForm"
-            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
           >
             RegisterForm
           </Link>
@@ -65,7 +65,7 @@ export default function Header() {
         <li>
           <Link
             href="/contact"
-            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
           >
             Contact
           </Link>
@@ -85,11 +85,11 @@ export default function Header() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)} 
           placeholder="Search..." 
-          className="flex-1 sm:flex-none px-4 py-2 rounded-l-md border-2 border-red-300 focus:outline-none focus:border-teal-500 w-full sm:w-auto"
+          className="flex-1 sm:flex-none px-4 py-2 rounded-l-md border-2 border-gray-400 focus:outline-none focus:border-white w-full sm:w-auto"
         />
         <button 
           type="submit" 
-          className="px-4 py-2 bg-teal-500 text-white rounded-r-md hover:bg-teal-600 flex justify-center items-center"
+          className="px-4 py-2 bg-gray-900 text-white rounded-r-md hover:bg-gray-700 flex justify-center items-center"
         >
           <FaSearch className="text-lg" />
         </button>
