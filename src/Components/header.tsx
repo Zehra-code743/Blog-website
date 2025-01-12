@@ -8,7 +8,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-teal-400 via-indigo-500 to-violet-600 text-white">
+    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-green-400 to-blue-500 text-red">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image 
@@ -23,32 +23,32 @@ export default function Header() {
       {/* Navigation Menu */}
       <ul className="flex flex-wrap space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 text-sm sm:text-base lg:text-lg mt-2 sm:mt-0">
         <Link href="/">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
             Home
           </li>
         </Link>
         <Link href="/aboutus">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
             About
           </li>
         </Link>
         <Link href="/feature">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="bg-clip-text text-red-500  hover:text-blue-500 cursor-pointer">
             Feature
           </li>
         </Link>
         <Link href="/blog">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="bg-clip-text text-red-500  hover:text-blue-500 cursor-pointer">
             Blog
           </li>
         </Link>
         <Link href="/registerform">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="bg-clip-text text-red-500  hover:text-blue-500 cursor-pointer">
             RegisterForm
           </li>
         </Link>
         <Link href="/contact">
-          <li className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:text-red-500 cursor-pointer">
+          <li className="bg-clip-text text-red-500  hover:text-blue-500 cursor-pointer">
             Contact
           </li>
         </Link>
@@ -71,7 +71,7 @@ export default function Header() {
         />
         <button 
           type="submit" 
-          className="px-4 py-2 bg-teal-500 text-white rounded-r-md hover:bg-teal-600"
+          className="px-4 py-2 bg-teal-500  rounded-r-md hover:bg-teal-600"
         >
           <FaSearch />
         </button>
