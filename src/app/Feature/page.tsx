@@ -3,48 +3,44 @@ export default function Feature() {
     {
       title: "Customization",
       description: "Tailor our product to suit your needs.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-6 inline-block" viewBox="0 0 32 32">
-          <path d="..." />
-        </svg>
-      ),
+      icon: "⚙️", // Placeholder icon
     },
     {
       title: "Security",
       description: "Your data is protected by the latest security measures.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-6 inline-block" viewBox="0 0 682.667 682.667">
-          <path d="..." />
-        </svg>
-      ),
+      icon: "🔒", // Placeholder icon
     },
     {
       title: "Support",
       description: "24/7 customer support for all your inquiries.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 mb-6 inline-block" viewBox="0 0 512.001 512.001">
-          <path d="..." />
-        </svg>
-      ),
+      icon: "📞", // Placeholder icon
     },
     // Add more features here...
   ];
 
   return (
-    <div className="font-[sans-serif] bg-gradient-to-r from-purple-800 to-indigo-800 py-12 px-4">
+    <div className="font-[sans-serif] bg-gradient-to-r from-purple-800 to-indigo-800 py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white sm:text-4xl text-2xl font-bold text-center mb-16">
+        {/* Section Header */}
+        <h2 className="text-white sm:text-4xl text-3xl font-extrabold text-center mb-12 leading-snug">
           Discover Our Exclusive Features
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-12 max-md:max-w-lg mx-auto">
+        
+        {/* Features Grid */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-xl group p-8 text-center hover:bg-white text-white hover:text-purple-800 hover:shadow-xl transition duration-300"
+              className="rounded-xl group p-8 text-center bg-gradient-to-br from-purple-700 to-indigo-700 text-white hover:scale-105 hover:shadow-2xl hover:bg-white hover:text-purple-800 transition-all duration-300 ease-in-out"
             >
-              {feature.icon}
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center w-16 h-16 bg-white text-purple-800 rounded-full mx-auto shadow-lg group-hover:shadow-purple-800 transition duration-300 text-3xl">
+                {feature.icon}
+              </div>
+              {/* Title */}
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-gray-300 group-hover:text-gray-500 text-sm">{feature.description}</p>
+              {/* Description */}
+              <p className="text-gray-300 group-hover:text-gray-600 text-sm">{feature.description}</p>
             </div>
           ))}
         </div>

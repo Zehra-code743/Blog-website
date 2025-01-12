@@ -49,7 +49,7 @@ export default function Contact() {
             Get in Touch
           </h2>
           <p className="text-sm text-gray-600 text-center">
-            We’re excited to hear from you! Fill out the form, and we’ll get back to you as soon as possible.
+            We are excited to hear from you! Fill out the form, and will get back to you as soon as possible.
           </p>
 
           {submitted && (

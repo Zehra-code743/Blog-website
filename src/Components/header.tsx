@@ -8,7 +8,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-green-400 to-blue-500 text-red">
+    <div className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg">
       {/* Logo Section */}
       <div className="logo flex-shrink-0">
         <Image 
@@ -22,36 +22,54 @@ export default function Header() {
 
       {/* Navigation Menu */}
       <ul className="flex flex-wrap space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 text-sm sm:text-base lg:text-lg mt-2 sm:mt-0">
-        <Link href="/">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+        <li>
+          <Link
+            href="/"
+            className="text-red-500 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+          >
             Home
-          </li>
-        </Link>
-        <Link href="/aboutus">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/aboutus"
+            className="text-yellow-400 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+          >
             About
-          </li>
-        </Link>
-        <Link href="/feature">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/feature"
+            className="text-green-400 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
+          >
             Feature
-          </li>
-        </Link>
-        <Link href="/blog">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/blog"
+            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+          >
             Blog
-          </li>
-        </Link>
-        <Link href="/registerform">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/registerform"
+            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+          >
             RegisterForm
-          </li>
-        </Link>
-        <Link href="/contact">
-          <li className="text-red-500 hover:text-blue-500 cursor-pointer">
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/contact"
+            className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
+          >
             Contact
-          </li>
-        </Link>
+          </Link>
+        </li>
       </ul>
 
       {/* Search Bar */}
