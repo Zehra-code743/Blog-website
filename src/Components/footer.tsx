@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <motion.footer
-      className="footer-parent bg-gray-900 text-gray-300 py-10 px-6"
+      className="footer-parent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-10 px-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -21,10 +21,10 @@ export default function Footer() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-xl font-semibold text-white mb-4 flex items-center">
-            <FaShieldAlt className="mr-2 text-blue-500" /> CyberSecurity 
+          <h2 className="text-xl font-semibold mb-4 flex items-center">
+            <FaShieldAlt className="mr-2 text-blue-200" /> CyberSecurity
           </h2>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="leading-relaxed">
             We provide cutting-edge cybersecurity solutions to protect your
             digital assets. With advanced tools and expertise, your safety is our
             priority.
@@ -38,37 +38,37 @@ export default function Footer() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
         >
-          <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <ul className="space-y-3">
             <li className="flex items-center space-x-3">
-              <FaFacebook className="text-blue-500" />
+              <FaFacebook className="text-blue-200" />
               <Link
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline hover:text-blue-300"
               >
                 Facebook
               </Link>
             </li>
             <li className="flex items-center space-x-3">
-              <FaTwitter className="text-blue-400" />
+              <FaTwitter className="text-blue-300" />
               <Link
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline hover:text-blue-400"
               >
                 Twitter
               </Link>
             </li>
             <li className="flex items-center space-x-3">
-              <FaLinkedin className="text-blue-700" />
+              <FaLinkedin className="text-blue-400" />
               <Link
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline hover:text-blue-500"
               >
                 LinkedIn
               </Link>
@@ -83,17 +83,19 @@ export default function Footer() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-          <p className="text-gray-400">
+          <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+          <p>
             For inquiries or support, reach us at:
           </p>
-          <p className="text-blue-500 mt-2">support@cybersec.com</p>
+          <p className="text-blue-200 mt-2 hover:text-blue-300">
+            support@cybersec.com
+          </p>
         </motion.div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">
-        <p>&copy; 2025 CyberSec . All rights reserved.</p>
+      <div className="mt-8 border-t border-blue-300 pt-4 text-center text-sm">
+        <p>&copy; 2025 CyberSec. All rights reserved.</p>
       </div>
     </motion.footer>
   );
