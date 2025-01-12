@@ -40,7 +40,7 @@ export default function Header() {
         </li>
         <li>
           <Link
-            href="/feature"
+            href="/Feature"
             className="text-green-400 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
           >
             Feature
@@ -56,7 +56,7 @@ export default function Header() {
         </li>
         <li>
           <Link
-            href="/registerform"
+            href="/RegisterForm"
             className="text-red-500 hover:text-white px-3 py-2 rounded-lg transition duration-300"
           >
             RegisterForm
