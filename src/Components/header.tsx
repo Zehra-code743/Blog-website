@@ -78,14 +78,14 @@ export default function Header() {
           e.preventDefault();
           console.log("Searching for:", searchQuery);
         }}
-        className="flex items-center mt-4 sm:mt-0 w-full sm:w-auto"
+        className="flex items-center mt-4 sm:mt-0 w-[40px] sm:w-auto"
       >
         <input 
           type="text" 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)} 
           placeholder="Search..." 
-          className="flex-1 sm:flex-none px-4 py-2 rounded-l-md border-2 border-gray-400 focus:outline-none focus:border-white w-full sm:w-auto"
+          className="flex-1 sm:flex-none px-4 py-2 rounded-l-md border-2 border-gray-400 focus:outline-none focus:border-white w-[40px] sm:w-auto"
         />
         <button 
           type="submit" 
