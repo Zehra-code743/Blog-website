@@ -29,7 +29,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <Image
-            src="/contact.png"
+            src="/Contact.png"
             alt="contact Image"
             width={500}
             height={500}

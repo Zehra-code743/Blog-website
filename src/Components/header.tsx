@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image"; // Import Image from Next.js
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,13 @@ const Header = () => {
       <div className="flex items-center gap-4 max-w-screen-xl mx-auto w-full">
         {/* Logo */}
         <Link href="/">
-          <img src="/cyberlogo.png" alt="Logo" className="h-10 w-auto" />
+          <Image
+            src="/Cyberlogo.png"
+            alt="Logo"
+            width={100} // Set width for the image
+            height={40} // Set height for the image
+            className="w-auto h-10"
+          />
         </Link>
 
         {/* Navigation Menu */}
