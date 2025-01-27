@@ -1,99 +1,112 @@
 "use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 
-export default function Header() {
-  const [searchQuery, setSearchQuery] = useState("");
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
-    <div className="flex flex-wrap justify-between items-center p-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-black shadow-lg">
-      {/* Logo Section */}
-      <div className="logo flex-shrink-0">
-        <Image 
-          src="/Cyberlogo.png" 
-          alt="Logo" 
-          width={150} 
-          height={150} 
-          className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
-        />
-      </div>
+    <header className="flex border-b py-3 px-4 sm:px-10 bg-gradient-to-r from-green-500 to-red-500 text-white font-sans min-h-[65px] tracking-wide relative z-50">
+      <div className="flex items-center gap-4 max-w-screen-xl mx-auto w-full">
+        {/* Logo */}
+        <Link href="/">
+          <img src="/cyberlogo.png" alt="Logo" className="h-10 w-auto" />
+        </Link>
 
-      {/* Navigation Menu */}
-      <ul className="flex flex-wrap space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 text-sm sm:text-base lg:text-lg mt-2 sm:mt-0">
-        <li>
-          <Link
-            href="/"
-            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/aboutus"
-            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/Feature"
-            className="text-gray-900 hover:text-white font-semibold hover:underline px-3 py-2 rounded-lg transition duration-300"
-          >
-            Feature
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/blog"
-            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
-          >
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/RegisterForm"
-            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
-          >
-            RegisterForm
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/Contact"
-            className="text-gray-900 hover:text-white px-3 py-2 rounded-lg transition duration-300"
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-
-      {/* Search Bar */}
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log("Searching for:", searchQuery);
-        }}
-        className="flex items-center mt-4 sm:mt-0 w-full sm:w-auto"
-      >
-        <input 
-          type="text" 
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)} 
-          placeholder="Search..." 
-          className="flex-1 sm:flex-none px-4 py-2 rounded-l-md border-2 border-gray-400 focus:outline-none focus:border-white w-full sm:w-[200px]"
-        />
-        <button 
-          type="submit" 
-          className="px-4 py-2 bg-gray-900 text-white rounded-r-md hover:bg-gray-700 flex justify-center items-center"
+        {/* Navigation Menu */}
+        <div
+          id="collapseMenu"
+          className={`${
+            isMenuOpen
+              ? "max-lg:translate-x-0"
+              : "max-lg:-translate-x-full"
+          } lg:flex lg:ml-14 lg:gap-x-5 transition-transform max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-white max-lg:text-gray-800 max-lg:p-6 max-lg:h-full max-lg:shadow-lg max-lg:z-50`}
         >
-          <FaSearch className="text-lg" />
-        </button>
-      </form>
-    </div>
+          <button
+            id="toggleClose"
+            onClick={toggleMenu}
+            className="lg:hidden absolute top-4 right-4 z-[100] p-2 bg-gray-100 rounded-full shadow-md"
+          >
+            <FaTimes className="text-xl text-gray-800" />
+          </button>
+          <ul className="lg:flex lg:gap-x-5 max-lg:space-y-4 max-lg:pt-10">
+            <li>
+              <Link
+                href="/"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/aboutus"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Feature"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                Feature
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/RegisterForm"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                RegisterForm
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Contact"
+                className="text-lg hover:text-red-700 transition-colors"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Search Bar and Menu Toggle */}
+        <div className="flex items-center gap-4 ml-auto">
+          <div className="flex items-center max-w-xs w-full bg-gray-100 px-4 py-2 rounded-full border focus-within:border-blue-600 transition-all">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full text-sm bg-transparent outline-none text-gray-800"
+            />
+            <FaSearch className="text-gray-500" />
+          </div>
+          <button
+            id="toggleOpen"
+            onClick={toggleMenu}
+            className="lg:hidden p-2 bg-gray-100 rounded-full shadow-md"
+          >
+            <FaBars className="text-xl text-gray-800" />
+          </button>
+        </div>
+      </div>
+    </header>
   );
-}
+};
+
+export default Header;
